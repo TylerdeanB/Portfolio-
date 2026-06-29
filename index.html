@@ -262,7 +262,7 @@
     <p>Open to consulting, digital strategy, and front-end-adjacent roles. Happy to walk through any of the above in more detail — including what's under NDA, in the right context.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="mailto:tylerb@braithnet.com">Email me</a>
-      <a class="btn btn-secondary" href="#" id="cv-link">Download CV</a>
+      <a class="btn btn-secondary" href="Tyler_Braithwaite_CV.pdf" download>Download CV</a>
     </div>
   </section>
 
@@ -279,12 +279,6 @@
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
   },{threshold:0.15});
   items.forEach(i=>obs.observe(i));
-
-  // CV link placeholder — swap href once the CV is hosted (e.g. /Tyler_Braithwaite_CV.pdf in the deployed project)
-  document.getElementById('cv-link').addEventListener('click', function(e){
-    e.preventDefault();
-    alert('Add your hosted CV file path here — e.g. /Tyler_Braithwaite_CV.pdf — and update the href in the code.');
-  });
 </script>
 
 </body>
