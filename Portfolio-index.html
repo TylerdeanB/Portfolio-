@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tyler Braithwaite — Founder & Builder</title>
+<meta name="description" content="Tyler Braithwaite — founder-operator building fintech and SaaS products from zero. Brand, front-end, and go-to-market end-to-end.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16140F;
+    --ink-2:#1C1A14;
+    --bone:#F1EDE3;
+    --bone-dim:#C9C4B6;
+    --vermilion:#FC4C13;
+    --slate:#8A8579;
+    --hairline:#2E2A22;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation:none!important;transition:none!important;} }
+
+  body{
+    background:var(--ink);
+    color:var(--bone);
+    font-family:'IBM Plex Sans',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--vermilion);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{content:"";width:14px;height:1px;background:var(--vermilion);display:inline-block;}
+
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--bone);}
+
+  /* NAV */
+  header{
+    position:sticky;top:0;z-index:10;
+    background:rgba(22,20,15,0.88);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--hairline);
+  }
+  nav{
+    max-width:760px;margin:0 auto;padding:18px 28px;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .mark{
+    font-family:'JetBrains Mono',monospace;font-weight:600;font-size:14px;
+    color:var(--bone);letter-spacing:0.05em;
+  }
+  .mark span{color:var(--vermilion);}
+  .navlinks{display:flex;gap:24px;font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;}
+  .navlinks a{color:var(--slate);text-decoration:none;transition:color .15s ease;}
+  .navlinks a:hover{color:var(--vermilion);}
+
+  /* HERO */
+  .hero{padding:88px 0 56px;}
+  .hero h1{font-size:clamp(34px,6vw,52px);line-height:1.12;margin:18px 0 20px;}
+  .hero h1 em{color:var(--vermilion);font-style:normal;}
+  .hero p{color:var(--bone-dim);font-size:17px;max-width:560px;}
+  .hero-meta{
+    margin-top:30px;display:flex;gap:18px;flex-wrap:wrap;
+    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--slate);
+  }
+  .hero-meta span{border:1px solid var(--hairline);padding:5px 10px;border-radius:3px;}
+
+  /* SECTION SHARED */
+  section{padding:52px 0;border-top:1px solid var(--hairline);}
+  section h2{font-size:22px;margin:12px 0 22px;}
+  .about p{color:var(--bone-dim);font-size:16px;max-width:600px;}
+
+  /* BUILD LOG */
+  .log-entry{
+    position:relative;
+    padding:22px 0 22px 26px;
+    border-left:1px solid var(--hairline);
+    margin-left:4px;
+    transition:border-color .2s ease;
+  }
+  .log-entry::before{
+    content:"";position:absolute;left:-4px;top:28px;
+    width:7px;height:7px;border-radius:50%;
+    background:var(--ink);border:2px solid var(--slate);
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .log-entry:hover{border-left-color:var(--vermilion);}
+  .log-entry:hover::before{border-color:var(--vermilion);background:var(--vermilion);}
+  .log-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px;}
+  .log-date{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--slate);}
+  .log-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:var(--bone);}
+  .log-tag{
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.06em;
+    text-transform:uppercase;padding:2px 8px;border-radius:3px;
+  }
+  .tag-live{color:#7CD992;border:1px solid #2E4A33;}
+  .tag-nda{color:#E0B24A;border:1px solid #4A3F22;}
+  .tag-exit{color:var(--slate);border:1px solid var(--hairline);}
+  .log-desc{color:var(--bone-dim);font-size:15px;max-width:560px;margin-bottom:10px;}
+  .log-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
+  .stack-tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--slate);}
+  .log-link{
+    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--vermilion);
+    text-decoration:none;border-bottom:1px solid transparent;
+  }
+  .log-link:hover{border-bottom-color:var(--vermilion);}
+
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+  @media (max-width:540px){.skills-grid{grid-template-columns:1fr;gap:24px;}}
+  .skill-col h3{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate);font-weight:500;margin-bottom:14px;}
+  .skill-col ul{list-style:none;}
+  .skill-col li{
+    font-size:14.5px;color:var(--bone-dim);padding:7px 0;
+    border-bottom:1px solid var(--hairline);
+  }
+  .skill-col li:last-child{border-bottom:none;}
+
+  /* CONTACT */
+  .contact h2{margin-bottom:10px;}
+  .contact p{color:var(--bone-dim);max-width:520px;margin-bottom:26px;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.04em;
+    padding:13px 22px;border-radius:4px;text-decoration:none;
+    display:inline-block;transition:transform .15s ease, opacity .15s ease;
+  }
+  .btn-primary{background:var(--vermilion);color:var(--ink);font-weight:600;}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-secondary{border:1px solid var(--hairline);color:var(--bone);}
+  .btn-secondary:hover{border-color:var(--vermilion);color:var(--vermilion);}
+
+  footer{padding:32px 0 48px;border-top:1px solid var(--hairline);}
+  footer p{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--slate);}
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease, transform .5s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="mark">TYLER<span>.</span>BRAITHWAITE</div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#log">Build Log</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">Founder · Builder · Melbourne, AU</div>
+    <h1>I build fintech and SaaS products from <em>zero</em> — brand, front-end, and the business behind them.</h1>
+    <p>Founder-operator with a track record of taking products from idea to live, working software. Hands-on across product strategy, React/Next.js front-end build, and go-to-market — currently splitting time across a fintech MVP and a self-built consumer SaaS platform.</p>
+    <div class="hero-meta">
+      <span>Open to consulting &amp; digital roles</span>
+      <span>React / Next.js</span>
+      <span>Product &amp; GTM</span>
+    </div>
+  </section>
+
+  <section id="about" class="about reveal">
+    <div class="eyebrow">About</div>
+    <h2>Operator first, builder by necessity.</h2>
+    <p>I've started and run ventures across hospitality, wellness, and now fintech — usually as the only person in the room who can do the strategy and the build. That's meant learning React and Next.js on the job to ship product myself, while also owning brand, client relationships, and commercial execution. I'm looking to bring that same end-to-end execution into a consulting or digital strategy team, rather than carry every part of a venture alone.</p>
+  </section>
+
+  <section id="log" class="reveal">
+    <div class="eyebrow">Build Log</div>
+    <h2>What I've shipped</h2>
+
+    <div class="log-entry">
+      <div class="log-head">
+        <span class="log-date">2026 — PRESENT</span>
+        <span class="log-title">Runsheet</span>
+        <span class="log-tag tag-live">Live</span>
+      </div>
+      <div class="log-desc">Hospitality fintech SaaS for shift workers — built solo from concept to a live product. Brand, web app, and go-to-market, end-to-end.</div>
+      <div class="log-tags">
+        <span class="stack-tag">Next.js</span><span class="stack-tag">Supabase</span><span class="stack-tag">Stripe</span><span class="stack-tag">Vercel</span>
+      </div>
+      <a class="log-link" href="https://getrunsheet.co" target="_blank" rel="noopener">→ getrunsheet.co</a>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-head">
+        <span class="log-date">2025 — PRESENT</span>
+        <span class="log-title">Smart Finance Lock System</span>
+        <span class="log-tag tag-nda">NDA</span>
+      </div>
+      <div class="log-desc">Co-founding partner on a fintech product in active MVP build. Leading product direction, front-end build, and go-to-market strategy alongside an engineering and a capital partner.</div>
+      <div class="log-tags">
+        <span class="stack-tag">Product</span><span class="stack-tag">Front-End</span><span class="stack-tag">Strategy</span>
+      </div>
+      <span class="log-link" style="color:var(--slate);cursor:default;">Details on request</span>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-head">
+        <span class="log-date">2022 — 2024</span>
+        <span class="log-title">Post Performance</span>
+        <span class="log-tag tag-exit">Handed Off</span>
+      </div>
+      <div class="log-desc">Founded a recovery/wellness service in Dubai. Secured the exclusive contract for the Dubai Rugby Sevens 2023. Built brand, ran sales and client relationships, then transitioned the business to a partner-led operation.</div>
+      <div class="log-tags">
+        <span class="stack-tag">Brand</span><span class="stack-tag">Sales</span><span class="stack-tag">Partnerships</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="reveal">
+    <div class="eyebrow">Skills</div>
+    <h2>What I bring</h2>
+    <div class="skills-grid">
+      <div class="skill-col">
+        <h3>Build</h3>
+        <ul>
+          <li>React / JavaScript / TypeScript</li>
+          <li>Next.js 14 (App Router)</li>
+          <li>Tailwind CSS</li>
+          <li>Supabase (PostgreSQL)</li>
+          <li>Stripe API integration</li>
+          <li>Vercel deployment · Git</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <h3>Operate</h3>
+        <ul>
+          <li>Digital strategy &amp; brand building</li>
+          <li>Go-to-market execution</li>
+          <li>Client engagement &amp; sales</li>
+          <li>Contract negotiation</li>
+          <li>Stakeholder &amp; partner management</li>
+          <li>Operations &amp; process management</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact reveal">
+    <div class="eyebrow">Contact</div>
+    <h2>Let's talk.</h2>
+    <p>Open to consulting, digital strategy, and front-end-adjacent roles. Happy to walk through any of the above in more detail — including what's under NDA, in the right context.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:tylerb@braithnet.com">Email me</a>
+      <a class="btn btn-secondary" href="#" id="cv-link">Download CV</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Tyler Braithwaite — Melbourne, Australia — © 2026</p>
+  </footer>
+
+</div>
+
+<script>
+  // scroll reveal
+  const items = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  },{threshold:0.15});
+  items.forEach(i=>obs.observe(i));
+
+  // CV link placeholder — swap href once the CV is hosted (e.g. /Tyler_Braithwaite_CV.pdf in the deployed project)
+  document.getElementById('cv-link').addEventListener('click', function(e){
+    e.preventDefault();
+    alert('Add your hosted CV file path here — e.g. /Tyler_Braithwaite_CV.pdf — and update the href in the code.');
+  });
+</script>
+
+</body>
+</html>
